@@ -4,10 +4,6 @@
     {{ .Site.Params.CustomFooterHTML | safeHTML }}
     {{ end }}
 
-    {{ if .Site.Params.footer }}
-    <span>&copy; {{ now.Year }} {{ .Site.Params.Footer}}</span>
-    {{ end }}
-    <span>
-        &#10084;&#65039; © 2023 Maxwell Goisman &#10084;&#65039;
-    </span>
+    <span id="__theme-copyright">&copy; {{ now.Year }} {{ .Site.Params.Footer}}</span>
+    <script>document.getElementById("__theme-copyright").innerHTML = "&copy; " + new Date().getFullYear() + " {{ .Site.Params.Footer}}"</script>
 </footer>
